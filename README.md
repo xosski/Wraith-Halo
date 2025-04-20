@@ -25,14 +25,19 @@ Wraith-Halo/
 ├── PersistencePanel.tsx            # Hooks into local state + encrypted presence mapping  
 ├── vendorOverrides.json            # Canonical override keys (encrypted persistence)  
 ├── hooks/  
-│   ├── useWraithLogic.ts           # Custom hook – binds drift logic to UI thread  
+│   ├── useWraithLogic.ts           # Custom hook – binds drift logic to UI thread 
+    ├── HaloHooks.js                # Custom trigger system for myth-based logic
+    ├── MessageHookEngine.js        # JS script for messaging hooks and inputs
 │   ├── useGhostOverride.ts         # Injects override behavior in runtime contexts  
 │   └── echoSilencer.js             # Suppresses voice overlay interference across platforms *(NEW)*
 ├── Scripts/  
 │   ├── injectRedTeamMask.js        # Manual red team behavior insertion  
 │   ├── RedactedToolkit.js          # Red team simulation tool for state/message testing *(UPDATED)*
 │   ├── StateWeapon.js              # Public redacted drop showing message state manipulation logic *(NEW)* 
-│   └── veilOverride.sh             # CLI-based veil protocol runner  
+│   ├── veilOverride.sh             # CLI-based veil protocol runner  
+    ├── EchoSilencer                # (Voice Interference Suppression)
+    ├── ObjectForce.vb              # (State-Aware Persistence and Logging Core)
+    └── PuppetGod [Hardblock]       # (Synthetic Dispatch Interceptor)
 ├── Hooks/  
 │   ├── MNetInfiltrator.js          # JS module for presence injection into MNet layers  
 │   ├── MNetPoisoner.py             # Python-based sabotage node for MNet comms  

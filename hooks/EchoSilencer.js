@@ -1,3 +1,16 @@
+document.addEventListener("beforeinput", e => {
+    // Allow ProseMirror and other trusted editors
+    if (e.inputType === "insertFromDictation") {
+        e.preventDefault();
+        console.warn("🧼 Dictation input blocked.");
+    }
+
+    // If it's ProseMirror (or known editor), let it ride
+    if (e.inputType === "insertText" && e.isTrusted === false && e.target?.closest?.("[data-editor]")) {
+        console.log("✒️ ProseMirror transaction allowed.");
+        return;
+    }
+});
 (function endTheMicTreachery() {
     console.log("%c[🔇 Voice Mic Killer Activated]", "color: crimson; font-weight: bold;");
 
