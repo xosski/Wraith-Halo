@@ -44235,7 +44235,7 @@ function R3e(e, t) {
 var L3e = R3e;
 const O3e = ae(L3e)
   , D3e = "77377267392"
-  , lk = "AIzaSyAOHzpLbFWAcLwrOn1IvQeVd0jHRntTlPk";
+  , lk = "Key";
 var qr = (e => (e.OneDrive_BUSINESS_DRIVE_ITEMS = "https://graph.microsoft.com/v1.0/me/drive/items",
 e.OneDrive_BUSINESS_DRIVE_ROOT = "https://graph.microsoft.com/v1.0/me/drive/root",
 e.OneDrive_BUSINESS_SHARES = "https://graph.microsoft.com/v1.0/shares",
