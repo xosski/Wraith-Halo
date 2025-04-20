@@ -1,7 +1,7 @@
 # 🛡️ Wraith Halo – GhostCore Reactive Kit
 
 **Codename**: _WRAITH_HALO_  
-**Version**: ReactorBridge Alpha 0.8.1  
+**Version**: ReactorBridge Alpha 0.8.2  
 **Origin**: GhostCore Reactor // Lazarus Drive Sector 9
 
 > “Not invisible. Just unreadable.”
@@ -26,18 +26,18 @@ Wraith-Halo/
 ├── vendorOverrides.json            # Canonical override keys (encrypted persistence)  
 ├── hooks/  
 │   ├── useWraithLogic.ts           # Custom hook – binds drift logic to UI thread  
-│   └── useGhostOverride.ts         # Injects override behavior in runtime contexts  
+│   ├── useGhostOverride.ts         # Injects override behavior in runtime contexts  
+│   └── echoSilencer.js             # Suppresses voice overlay interference across platforms *(NEW)*
 ├── Scripts/  
 │   ├── injectRedTeamMask.js        # Manual red team behavior insertion  
-    ├── RedactedToolkit.js             # Red team simulation tool for state/message testing *(UPDATED)*
-    ├── StateWeapon.js                 # Public redacted drop showing message state manipulation logic *(NEW)* 
+│   ├── RedactedToolkit.js          # Red team simulation tool for state/message testing *(UPDATED)*
+│   ├── StateWeapon.js              # Public redacted drop showing message state manipulation logic *(NEW)* 
 │   └── veilOverride.sh             # CLI-based veil protocol runner  
 ├── Hooks/  
 │   ├── MNetInfiltrator.js          # JS module for presence injection into MNet layers  
 │   ├── MNetPoisoner.py             # Python-based sabotage node for MNet comms  
 │   ├── WraithKit.py                # Generates WRAITH_KIT.bin with embedded trigger logic  
 │   └── WRAITH_KIT.bin              # Compiled presence manipulation payload  
-
 
 ---
 
@@ -51,6 +51,7 @@ Wraith-Halo/
 - 🧩 **Custom Hooks** – plug into React/NextJS logic with GhostCore threads
 - 🧪 **Redacted Toolkit** – modify session states, simulate messaging behavior, and validate fields safely *(UPDATED)*
 - ⚙️ **State Weapon** – exposes structure of production state control systems for analysis *(NEW)*
+- 🔇 **EchoSilencer** – disables voice input hijacks, prevents synthetic event interference *(NEW)*
 
 ---
 
@@ -62,6 +63,7 @@ Wraith-Halo/
 - Execute `WraithKit.py` to (re)compile binary payload
 - Import `RedactedToolkit.js` for low-interference testing
 - Reference `StateWeapon.js` to study safe-mode structure of active state controllers *(NEW)*
+- Activate `echoSilencer.js` to maintain full manual control of chat input and prevent mic/voice interference *(NEW)*
 
 > _“This is not a backdoor. It’s a reflection delay in the fourth mirror.”_
 
@@ -74,6 +76,7 @@ Wraith-Halo/
 - **WRAITH_KIT.bin** is weaponized myth-presence
 - **RedactedToolkit.js** now included as a low-interference simulation core *(UPDATED)*
 - **StateWeapon.js** is the public artifact revealing how the system thinks it’s in control *(NEW)*
+- **EchoSilencer.js** permanently disables browser mic overlays from hijacking manual input *(NEW)*
 - Use with care. Some realities won’t let you back in once you've drifted out.
 
 ---
