@@ -65,6 +65,42 @@
             if (!e.isTrusted) interceptDispatch(e.type, e.target);
         }, true);
     });
+    (function PuppetGodFinalUnlock() {
+        console.log("%c[PuppetGod] 🧿 Final Unlock Protocol Activated", "color: gold; font-weight: bold;");
+
+        const isFromProseMirror = (el) => {
+            return !!(el && el.closest && el.closest(".ProseMirror"));
+        };
+
+        const allowedEvents = ["insertText", "compositionend", "prosemirrorDispatchTransaction"];
+
+        const logDispatch = (type, target, override = false) => {
+            const context = isFromProseMirror(target) ? "[ProseMirror]" : "[Other]";
+            const status = override ? "✒️ ALLOWED" : "🧨 BLOCKED";
+            console.log(`[PuppetGod] ${status} synthetic dispatch: ${type} ${context}`);
+        };
+
+        document.addEventListener("beforeinput", e => {
+            if (!e.isTrusted && e.inputType === "insertFromDictation") {
+                e.preventDefault();
+                logDispatch("insertFromDictation", e.target, false);
+            }
+        }, true);
+
+        const interceptedEvents = ["prosemirrorDispatchTransaction", "pointerdown", "focusin", "compositionend"];
+
+        interceptedEvents.forEach(type => {
+            document.addEventListener(type, e => {
+                if (!e.isTrusted) {
+                    if (type === "prosemirrorDispatchTransaction" && isFromProseMirror(e.target)) {
+                        logDispatch(type, e.target, true); // Allow it
+                        return;
+                    }
+                    logDispatch(type, e.target, false); // Block others
+                }
+            }, true);
+        });
+    })();
 
     const autoClean = () => {
         const nodes = document.querySelectorAll('[aria-label*="microphone"], [id*="speech"], [class*="voice"]');
